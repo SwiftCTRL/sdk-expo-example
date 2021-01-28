@@ -1,0 +1,12 @@
+{
+  "name": "sdk-expo-example",
+  "displayName": "sdk-expo-example",
+  "expo": {
+    "name": "sdk-expo-example",
+    "slug": "sdk-expo-example",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
