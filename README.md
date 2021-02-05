@@ -9,8 +9,8 @@
 
 ```sh
 # clone the project
-git clone git@github.com:SwiftCTRL/swift-expo-example.git
-cd swift-expo-example
+git clone git@github.com:SwiftCTRL/sdk-expo-example.git
+cd sdk-expo-example
 
 # install JavaScript and native dependencies
 yarn install
