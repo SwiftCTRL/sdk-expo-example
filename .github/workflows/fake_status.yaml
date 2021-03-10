@@ -1,0 +1,16 @@
+name: "Step"
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - main
+
+jobs:
+  must_always_succeed:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Must always succeed."
+        run: |
+          echo "I am here to prevent people from merging on protected branches"
