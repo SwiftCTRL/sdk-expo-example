@@ -23,6 +23,13 @@ yarn ios
 
 > **Troubleshooting tip:** if you encounter `SDK "iphoneos" cannot be located`, it might be a sign that your Xcode was installed from the command line. You can fix this by running: `sudo xcode-select --switch /Applications/Xcode.app`.
 
+## Dependencies
+
+Other than the basic React Native scaffolding and the SDK, this project uses two libraries:
+
+- [qrcode](https://www.npmjs.com/package/qrcode): to convert the byte array to an SVG (400k+ weekly downloads)
+- [react-native-svg](https://www.npmjs.com/package/react-native-svg): to display the SVG (300k+ weekly downloads)
+
 ## Getting a `userToken`
 
 To get the project running, you will first need to set the `userToken` in `App.tsx`.

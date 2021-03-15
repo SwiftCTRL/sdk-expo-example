@@ -10,7 +10,7 @@ interface SwiftCTRLSDKInterface {
   initialize: (userToken: string, onInitialized: () => void) => void;
   registerForQRCode: (
     userToken: string,
-    onQRCodeReceived: (base64Image: string) => void
+    onQRCodeReceived: (qrByteArray: Uint8Array) => void
   ) => void;
   unregisterForQRCode: (userToken: string) => void;
   disconnect: () => void;
@@ -33,7 +33,7 @@ const initialize = (userToken: string, onInitialized: () => void) => {
 
 const registerForQRCode = (
   userToken: string,
-  onQRCodeReceived: (base64Image: string) => void
+  onQRCodeReceived: (qrByteArray: Uint8Array) => void
 ) => {
   qrCodeSubscription = eventEmitter.addListener(
     'didReceiveQRCode',

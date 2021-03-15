@@ -41,15 +41,19 @@ RCT_EXPORT_METHOD(disconnect)
 
 - (void)didReceiveQRCodeWithQrBase64Image:(NSString * _Nonnull)qrBase64Image {
   RCTLogInfo(@"Bridge: didReceiveQRCodeWithQrBase64Image");
-  [self sendEventWithName:@"didReceiveQRCode" body:qrBase64Image];
 }
 
 - (void)didReceiveQRCodeWithQrView:(UIImageView * _Nonnull)qrView {
   RCTLogInfo(@"Bridge: didReceiveQRCodeWithQrView");
 }
 
+- (void)didReceiveQRCodeWithQrBytesArray:(NSArray<NSNumber *> * _Nonnull)qrBytesArray {
+  RCTLogInfo(@"Bridge: didReceiveQRCodeWithQrBytesArray");
+  [self sendEventWithName:@"didReceiveQRCode" body:qrBytesArray];
+}
+
 - (void)reportErrorWithError:(NSError * _Nonnull)error {
-  RCTLogInfo(@"Bridge: reportErrorWithError");
+  RCTLogInfo(@"Bridge: reportErrorWithError: %@", error);
 }
 
 @end
