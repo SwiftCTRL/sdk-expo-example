@@ -1,5 +1,7 @@
+import QRCode from 'qrcode';
 import React, { useState } from 'react';
-import { StyleSheet, View, Button, Image, Text } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { SvgXml } from 'react-native-svg';
 import { SwiftCTRL } from './SwiftCTRL';
 
 // TODO: Obtain a user token and set it here
@@ -7,13 +9,31 @@ const userToken = '<ADD_YOUR_USER_TOKEN>';
 
 export default function App() {
   const [initialized, setInitialized] = useState<boolean>(false);
-  const [qrCodeString, setQRCodeString] = useState<string>('');
+  const [qrXml, setQrXml] = useState<string>('');
 
   const initialize = () => {
     SwiftCTRL.initialize(userToken, () => {
       // Start listening for QR code updates
       setInitialized(true);
-      SwiftCTRL.registerForQRCode(userToken, setQRCodeString);
+      SwiftCTRL.registerForQRCode(userToken, (qrByteArray) => {
+        // Encode the byte array as an SVG
+        QRCode.toString(
+          [
+            {
+              // @ts-ignore
+              data: qrByteArray,
+              mode: 'byte',
+            },
+          ],
+          {
+            version: 5,
+            errorCorrectionLevel: 'M',
+            type: 'utf8',
+          }
+        )
+          .then(setQrXml)
+          .catch((err) => console.error(err));
+      });
     });
   };
 
@@ -22,7 +42,7 @@ export default function App() {
     SwiftCTRL.disconnect();
 
     setInitialized(false);
-    setQRCodeString('');
+    setQrXml('');
   };
 
   if (!initialized) {
@@ -39,7 +59,7 @@ export default function App() {
   {
     /* initialized, waiting for the first QR code to come in */
   }
-  if (qrCodeString === '') {
+  if (qrXml === '') {
     return (
       <View style={styles.container}>
         <Text>Waiting to receive QR code...</Text>
@@ -52,10 +72,7 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.qrCode}
-        source={{ uri: 'data:image/jpg;base64,' + qrCodeString }}
-      />
+      <SvgXml style={styles.qrCode} xml={qrXml} />
       <Button title="Tap to disconnect" onPress={disconnect} />
     </View>
   );

@@ -5,7 +5,9 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '13.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/SwiftCTRL/Podspecs.git'
+
+#source 'https://github.com/SwiftCTRL/Podspecs.git' # production
+source 'https://github.com/SwiftCTRL/PodspecsDev.git' # development
 
 target 'sdkexpoexample' do
   use_unimodules!
@@ -14,7 +16,7 @@ target 'sdkexpoexample' do
   use_react_native!(:path => config["reactNativePath"])
 
   # SwiftCTRL SDK
-  pod 'SwiftCTRLSDK', '~> 0.1.13'
+  pod 'SwiftCTRLSDK', '~> 0.1.14'
 
   # Uncomment the code below to enable Flipper.
   #
