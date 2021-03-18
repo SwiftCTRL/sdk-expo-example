@@ -16,7 +16,7 @@ target 'sdkexpoexample' do
   use_react_native!(:path => config["reactNativePath"])
 
   # SwiftCTRL SDK
-  pod 'SwiftCTRLSDK', '~> 0.1.14'
+  pod 'SwiftCTRLSDK', '~> 0.1.15'
 
   # Uncomment the code below to enable Flipper.
   #
