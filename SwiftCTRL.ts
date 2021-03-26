@@ -1,7 +1,8 @@
+import { Buffer } from 'buffer';
 import {
-  NativeModules,
-  NativeEventEmitter,
   EmitterSubscription,
+  NativeEventEmitter,
+  NativeModules,
 } from 'react-native';
 
 const { SwiftCTRLSDKModule } = NativeModules;
@@ -33,11 +34,16 @@ const initialize = (userToken: string, onInitialized: () => void) => {
 
 const registerForQRCode = (
   userToken: string,
-  onQRCodeReceived: (qrByteArray: Uint8Array) => void
+  onQRCodeReceived: (value: Uint8Array) => void
 ) => {
   qrCodeSubscription = eventEmitter.addListener(
     'didReceiveQRCode',
-    onQRCodeReceived
+    (value: string | Uint8Array) => {
+      // If the value is in base64, decode it first
+      const byteArray =
+        typeof value === 'string' ? Buffer.from(value, 'base64') : value;
+      onQRCodeReceived(byteArray);
+    }
   );
 
   SwiftCTRLSDKModule.registerForQRCode(userToken);
