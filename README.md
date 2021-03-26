@@ -6,6 +6,7 @@
 - Cocoapods (`brew install cocoapods`)
 - jq (`brew install jq`) (optional)
 - Xcode (from the App Store)
+- Android Studio
 
 ```sh
 # clone the project
@@ -16,9 +17,10 @@ cd sdk-expo-example
 yarn install
 npx pod-install # (replaces `pod install` in React Native)
 
-# launch the iOS simulator
+# launch the Android/iOS apps
 # native code needs to be rebuilt after modifications, so you will need to re-run this on changes.
 yarn ios
+yarn android
 ```
 
 > **Troubleshooting tip:** if you encounter `SDK "iphoneos" cannot be located`, it might be a sign that your Xcode was installed from the command line. You can fix this by running: `sudo xcode-select --switch /Applications/Xcode.app`.
@@ -27,6 +29,7 @@ yarn ios
 
 Other than the basic React Native scaffolding and the SDK, this project uses two libraries:
 
+- [buffer](https://www.npmjs.com/package/buffer): to decode Base64 strings (31M+ weekly downloads)
 - [qrcode](https://www.npmjs.com/package/qrcode): to convert the byte array to an SVG (400k+ weekly downloads)
 - [react-native-svg](https://www.npmjs.com/package/react-native-svg): to display the SVG (300k+ weekly downloads)
 
@@ -65,7 +68,7 @@ EOF
 printf "User JWT:\n%s\n" $USER_JWT
 ```
 
-## Debugging
+## Debugging iOS
 
 Once your project is running, press `CMD` + `D` in the emulator, and enable "Debug mode".
 
