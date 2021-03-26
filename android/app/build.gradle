@@ -198,6 +198,12 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // SwiftCTRL SDK
+    implementation ("com.swiftctrl:swiftctrl-sdk:1.0.0"){ changing = true }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
     addUnimodulesDependencies()
 
     if (enableHermes) {
