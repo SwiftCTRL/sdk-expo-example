@@ -58,6 +58,7 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - rapidjson (1.1.0)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
     - FBLazyVector (= 0.63.4)
@@ -292,7 +293,10 @@ PODS:
     - React-Core
   - RNSVG (12.1.0):
     - React
-  - SwiftCTRLSDK (0.1.16)
+  - SwiftCTRLSDK (0.1.18):
+    - Tink (~> 1.5.0)
+  - Tink (1.5.0):
+    - rapidjson (~> 1.1.0)
   - UMAppLoader (1.4.0)
   - UMBarCodeScannerInterface (5.4.0)
   - UMCameraInterface (5.4.0)
@@ -377,6 +381,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - boost-for-react-native
+    - rapidjson
+    - Tink
   https://github.com/SwiftCTRL/PodspecsDev.git:
     - SwiftCTRLSDK
 
@@ -517,6 +523,7 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: f2c97f2529dd79c083355182cc158c9f98f4bd6e
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  rapidjson: 926ddeea70d7a0987b6d746cd9fa51f165467cd3
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -541,7 +548,8 @@ SPEC CHECKSUMS:
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: 3d682bcaba69a4f8e55543d90818704f34338db1
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
-  SwiftCTRLSDK: 1e77b1da3aa69bd2ba93a15f4378c1612996fb23
+  SwiftCTRLSDK: 1a700eb900bc48f161245e592229694752eb714d
+  Tink: 0cc396beb2288f005fb4db9e027c0ee975c7728a
   UMAppLoader: 92d044af52626af3d81a69796ad666fc7a9a7d78
   UMBarCodeScannerInterface: 3f6c1b09ef4b867ce752b8c0b3893bcf9cd85f32
   UMCameraInterface: d516032121192fee9a6c93bdfff0bb2cc7282796
