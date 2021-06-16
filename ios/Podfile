@@ -6,8 +6,8 @@ platform :ios, '13.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-#source 'https://github.com/SwiftCTRL/Podspecs.git' # production
-source 'https://github.com/SwiftCTRL/PodspecsDev.git' # development
+source 'https://github.com/SwiftCTRL/Podspecs.git' # production
+#source 'https://github.com/SwiftCTRL/PodspecsDev.git' # development
 
 target 'sdkexpoexample' do
   use_unimodules!
@@ -16,7 +16,7 @@ target 'sdkexpoexample' do
   use_react_native!(:path => config["reactNativePath"])
 
   # SwiftCTRL SDK
-  pod 'SwiftCTRLSDK', '~> 0.1.16'
+  pod 'SwiftCTRLSDK', '~> 0.1.18'
 
   # Uncomment the code below to enable Flipper.
   #
