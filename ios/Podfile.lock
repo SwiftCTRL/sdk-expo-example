@@ -362,7 +362,7 @@ DEPENDENCIES:
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
-  - SwiftCTRLSDK (~> 0.1.16)
+  - SwiftCTRLSDK (~> 0.1.18)
   - UMAppLoader (from `../node_modules/unimodules-app-loader/ios`)
   - UMBarCodeScannerInterface (from `../node_modules/unimodules-barcode-scanner-interface/ios`)
   - UMCameraInterface (from `../node_modules/unimodules-camera-interface/ios`)
@@ -383,7 +383,7 @@ SPEC REPOS:
     - boost-for-react-native
     - rapidjson
     - Tink
-  https://github.com/SwiftCTRL/PodspecsDev.git:
+  https://github.com/SwiftCTRL/Podspecs.git:
     - SwiftCTRLSDK
 
 EXTERNAL SOURCES:
@@ -548,7 +548,7 @@ SPEC CHECKSUMS:
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: 3d682bcaba69a4f8e55543d90818704f34338db1
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
-  SwiftCTRLSDK: 1a700eb900bc48f161245e592229694752eb714d
+  SwiftCTRLSDK: ecb0445d3dfc126f28765931e946f76ca714872e
   Tink: 0cc396beb2288f005fb4db9e027c0ee975c7728a
   UMAppLoader: 92d044af52626af3d81a69796ad666fc7a9a7d78
   UMBarCodeScannerInterface: 3f6c1b09ef4b867ce752b8c0b3893bcf9cd85f32
@@ -565,6 +565,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 4c60b43eaf3cb05a164bc9113258a171c18b7bf7
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: 672b009fa97654baf1ad9f4fddbe87019bf7e2d9
+PODFILE CHECKSUM: 7b609096c8139d7dabb83e57eda5d03c4ac796b3
 
 COCOAPODS: 1.10.1
